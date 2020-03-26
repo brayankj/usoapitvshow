@@ -1,0 +1,49 @@
+<div class="container animated fadeIn">
+    <div class="row my-2 text-center align-items-center">
+        <div class="col-12 col-md-8 ">
+            <h2 class="mt-2">More of your the program favorite</h2>
+        </div>
+        <div class="col-12 col-md-4 ">
+            <button (click)="return()" class="btn">
+                <i class="fas fa-chevron-left"></i> Return
+            </button>
+        </div>
+    </div>
+
+    <div class="col-12 my-4">
+        <div class="card animated fadeIn" *ngIf="data">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <ng-container *ngIf="data.image==null; else elseTemplate">
+                        <img class="imgF" src="./assets/noimg.jpg" alt="no img">
+                    </ng-container>
+                    <ng-template #elseTemplate>
+                        <img class="imgT" [src]="data.image.original" alt="no img">
+                    </ng-template>
+
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">{{data.name}}e</h3>
+                        <p class="card-text">Type: {{data.type}}</p>
+                        <p class="card-text">Runtime: {{data.runtime}}</p>
+                        <p>Rating: {{data.rating.average}}</p>
+                        <ul *ngFor="let i of data.genres">
+                            <li><span class="badge badge-secondary">{{i}}</span></li>
+                        </ul>
+
+                        <p class="text-left m-0">
+                            <small class="text-muted">language {{data.language}}</small>
+                        </p>
+                        <p class="text-left m-0">
+                            <small class="text-muted">status {{data.status}}</small>
+                        </p>
+                        <p class="text-left m-0">
+                            <small class="text-muted">premiered {{data.premiered}}</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="container animated fadeIn">
+    <div class="row">
+        <div class="col-12 text-center my-3">
+            <h2>API the Show Tv</h2>
+        </div>
+        <div class="col-12">
+            <form>
+                <div class="form-row">
+                    <div class="col-12 col-md-8 text-center">
+                        <label class="form-control">
+                            <i class="fas fa-search"></i> Search your favorite program 
+                        </label>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <input [formControl]="bubuscar" type="text" class="form-control" placeholder="Search...">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row my-3 animated fadeIn">
+        <div class="col-sm-4 col-md-3 m-0 p-0" *ngFor="let item of data">
+            <div (click)="more(item.id)" class="card">
+                <div class="card-title mb-0 text-center">
+                    <p class="py-2 m-0">{{item.name}}</p>
+                </div>
+                <div class="card-body">
+                    <ng-container *ngIf="item.image==null; else elseTemplate">
+                        <img class="imgF" src="./assets/noimg.jpg" alt="">
+                    </ng-container>
+                    <ng-template #elseTemplate>
+                        <img class="imgF" [src]="item.image.medium" alt="">
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>

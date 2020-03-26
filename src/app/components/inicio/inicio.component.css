@@ -1,0 +1,33 @@
+h2 {
+    color: #34275f;
+    text-shadow: 1px 1px 2px rgba(40, 42, 156, 0.6);
+}
+
+form label {
+    background: #34275fe0;
+    color: #fff;
+    border-radius: 20px;
+}
+
+form input {
+    border-radius: 15px;
+}
+
+.card {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.card p {
+    color: #758634;
+}
+
+.card-body {
+    padding: 0;
+}
+
+.imgF {
+    width: 100%;
+    height: 250px;
+}
