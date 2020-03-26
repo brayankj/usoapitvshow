@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'consumoapitvmaze';
+  title = 'Tv Show';
+
+  constructor(){
+    Swal.fire({
+      title: 'Consumo Rest Api de progrmas tv',
+      text: 'Desarrollo de aplicación sin ánimo de lucro'
+    });
+  }
+
 }
